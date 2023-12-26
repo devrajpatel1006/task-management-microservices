@@ -1,0 +1,48 @@
+version: '3'
+services:
+  api-gateway:
+    # build: ./api-gateway
+    ports:
+      - "3000:3000"
+    # depends_on:
+    #   - auth-service
+    #   - task-service
+    #   - user-service
+    container_name: api-gateway
+    build:
+      context: .
+      dockerfile: /api-gateway/Dockerfile
+      # command: npm run start:dev
+
+  # auth-service:
+  #   build: ./auth-service
+  #   ports:
+  #     - "3003:3003"
+  #   depends_on:
+  #     - db
+
+  # task-service:
+  #   build: ./task-service
+  #   ports:
+  #     - "3001:3001"
+  #   depends_on:
+  #     - db
+
+  # user-service:
+  #   build: ./user-service
+  #   ports:
+  #     - "3002:3002"
+  #   depends_on:
+  #     - db
+
+  # db:
+  #   image: mysql:latest
+  #   environment:
+  #     MYSQL_DATABASE: nest_task_management
+  #     MYSQL_USER: root
+  #     MYSQL_PASSWORD: 
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
