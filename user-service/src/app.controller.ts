@@ -1,7 +1,7 @@
 import { BadRequestException, Controller, Get, UsePipes } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MessagePattern } from '@nestjs/microservices';
-import { User } from 'src/models/user.entity';
+import { User } from './models/user.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { addUserSchema, deleteUserSchema } from './dto/joi-validations-schema.dto';
